@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Hungry",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
