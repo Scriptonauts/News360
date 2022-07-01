@@ -27,14 +27,13 @@ class FeedCard extends React.Component<any, any> {
             this.addCategories = catQ;
         }
 
-      fetch(env.REACT_APP_BASE_URL + '/posts/?per_page=' + this.props.count + this.addCategories, { mode: 'cors' })
+      fetch(`${env.REACT_APP_BASE_URL}/posts/?per_page=${this.props.count + this.addCategories}`, { mode: 'cors' })
             .then(response => response.json())
             .then(response => {
                 if (response == '') {
                     let html = <p style={{ margin: 'auto' }}> No feed at the momemt</p>;
                     this.setState({ feedList: html, loading: false});
                 } else {
-
                     let html = response.map(
                         (feedItem: any) => (
                             <IonCol key={feedItem.id} size='12' sizeSm='12' sizeMd='4' sizeLg='3'>

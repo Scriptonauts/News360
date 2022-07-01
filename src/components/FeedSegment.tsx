@@ -185,8 +185,6 @@ class FeedSegment extends React.Component<any, any> {
         this.setState({ segment: buildSegment })
     }
 
-
-
     render() {
 
         return (

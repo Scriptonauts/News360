@@ -48,7 +48,6 @@ const VideoList: React.FC<any> = () => {
 
     return (
         <>
-
             <IonGrid style={{ paddingTop: '0rem', marginTop: '0rem' }}>
                 <IonRow >{videoList}</IonRow>
             </IonGrid >

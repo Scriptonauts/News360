@@ -1,5 +1,6 @@
 import React from 'react';
 import { IonSlides, IonSlide, IonContent, IonSpinner, IonRouterLink } from '@ionic/react';
+import Spinner from './Spinner';
 
 // Optional parameters to pass to the swiper instance.
 // See http://idangero.us/swiper/api/ for valid options.
@@ -15,7 +16,7 @@ class FeedSlider extends React.Component<any, any>{
     slide: any;
     constructor(props: any) {
         super(props);
-        this.state = { slideList: <IonSpinner name="dots" style={{ margin: '0px auto' }} />, addCategories: ''};
+        this.state = { slideList: <Spinner />, addCategories: ''};
     }
 
     componentDidMount() {
@@ -24,8 +25,7 @@ class FeedSlider extends React.Component<any, any>{
             this.addCategories = catQ;
         }
 
-
-        fetch('https://kwekubright.com/hungry_project/wp-json/wp/v2/posts/?per_page=' + this.props.count + this.addCategories, { mode: 'cors' })
+        fetch(`${process.env.REACT_APP_BASE_URL}/posts/?per_page=${this.props.count + this.addCategories}`, { mode: 'cors' })
             .then(response => response.json())
             .then(response => {
                 let html = response.map(
@@ -43,7 +43,6 @@ class FeedSlider extends React.Component<any, any>{
                     )
                 );
 
-
                 this.setState({ slideList: html });
 
                 let slide_ =
@@ -54,9 +53,6 @@ class FeedSlider extends React.Component<any, any>{
                     );
 
                 this.setState({ slide: slide_ });
-
-
-
             })
             .catch(err => {
                 console.log(err);
