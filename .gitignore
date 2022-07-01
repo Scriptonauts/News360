@@ -1,3 +1,9 @@
+android/
+.idea/
+.vscode/
+.DS_Store
+build/
+
 # Logs
 logs
 *.log
