@@ -25,7 +25,7 @@ let FeedCategorySlider = (props: any) => {
 
     useEffect(() => {
 
-        fetch('https://kwekubright.com/hungry_project/wp-json/wp/v2/categories', { mode: 'cors' })
+        fetch(`${process.env.REACT_APP_BASE_URL}/categories`, { mode: 'cors' })
             .then(response => response.json())
             .then(response => {
                 let html = response.map(
@@ -35,7 +35,6 @@ let FeedCategorySlider = (props: any) => {
                                 <div className='cat-bottom-left '><h5>{catItem.name.toUpperCase()}</h5></div>
                             </IonCard>
                         </IonSlide>
-
                     )
                 );
 
