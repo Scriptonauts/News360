@@ -1,4 +1,4 @@
-const SwitchFeedTabContent = (payload: any) => {
+const SwitchFeedTabContent = (payload: object) => {
 
     return {
         type: 'Switch_FeedTab_Content',

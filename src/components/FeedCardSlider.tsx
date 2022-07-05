@@ -23,7 +23,7 @@ class FeedCardSlider extends React.Component<any, any> {
 
     componentDidMount() {
         if (this.props.categories) {
-            let catQ = '&categories=' + this.props.categories;
+            const catQ = '&categories=' + this.props.categories;
             this.addCategories = catQ;
         }
 
@@ -55,7 +55,7 @@ class FeedCardSlider extends React.Component<any, any> {
 
                 this.setState({ feedList: html });
 
-                let slider =
+                const slider =
                     <IonGrid style={{ paddingTop: '0rem', marginTop: '0rem' }}>
                         <IonRow ><IonSlides pager={true} options={slideOpts} style={{ padding: 0 }}>
                             {this.state.feedList}

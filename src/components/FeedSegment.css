@@ -1,7 +1,9 @@
 ion-segment-button {
-  color: #ffffff;
+  color: #fff;
 }
+
 ion-segment-button.segment-button-checked {
-  color: #ffffff;
+  color: #fff;
+
   --ion-color-base: rgb(255, 255, 255) !important;
 }

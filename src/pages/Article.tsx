@@ -1,6 +1,5 @@
 import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import './Article.css';
-import FeedSegment from '../components/FeedSegment';
 import React from 'react';
 import { Markup } from 'interweave';
 import TimeAgo from 'javascript-time-ago'
@@ -30,7 +29,7 @@ class Article extends React.Component<any, any> {
       .then(response => response.json())
       .then(response => {
 
-        let article = response.map((data: any) => (
+        const article = response.map((data: any) => (
           <IonGrid >
             <IonRow>
               <IonCol size='12'>
@@ -56,10 +55,6 @@ class Article extends React.Component<any, any> {
       });
   }
 
-  componentWillUnmount() {
-
-  }
-
   render() {
     return (
       <IonPage>
@@ -79,6 +74,6 @@ class Article extends React.Component<any, any> {
     );
   }
 
-};
+}
 
 export default Article;
