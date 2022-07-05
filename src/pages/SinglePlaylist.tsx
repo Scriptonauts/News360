@@ -16,7 +16,7 @@ const SinglePlaylist: React.FC = () => {
         fetch('https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=' + uriSegments.pid + '&key=AIzaSyC6USfT6XFpEcfaFvIxEsrrGFKMAvztnpo&maxResults=25', { mode: 'cors' })
             .then(response => response.json())
             .then(response => {
-                let html = response.items.map(
+                const html = response.items.map(
 
                     (videoItem: any) => (
 

@@ -1,17 +1,14 @@
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 import { ReactNode } from 'react';
-import ExploreContainer from '../components/ExploreContainer';
 import FeedCard from '../components/FeedCard';
 import FeedCardSlider from '../components/FeedCardSlider';
 import FeedCategoryMason from '../components/FeedCategoryMason';
 import FeedCategorySlider from '../components/FeedCategorySlider';
 import FeedSlider from '../components/FeedSlider';
-import PlayListSlider from '../components/PlayListSlider';
-import './Home.css';
 
 class Home extends React.Component<any, any>{
-  categories = Array();
+  categories: any = [];
   constructor(props: any) {
     super(props);
     this.state = { catList: '' }
@@ -19,13 +16,13 @@ class Home extends React.Component<any, any>{
 
   componentDidMount() {
     //Lets fetch all categories
-    fetch('https://kwekubright.com/hungry_project/wp-json/wp/v2/categories', { mode: 'cors' })
+    fetch(process.env.REACT_APP_BASE_URL + '/categories?per_page=13', { mode: 'cors' })
       .then(response => response.json())
       .then(response => {
 
         localStorage.setItem('categories', JSON.stringify(response));
 
-        let html = response.map(
+        const html = response.map(
           (catItem: any) =>
           (
             this.categories.push(catItem.id)
@@ -40,7 +37,6 @@ class Home extends React.Component<any, any>{
   }
 
   render(): ReactNode {
-    console.log(process.env.REACT_APP_SLIDER_CATEGORY_ID);
     return (
       <IonPage>
         <IonHeader style={{ backgroundColor: '#ad0000', color: '#ffffff' }}>
@@ -66,11 +62,11 @@ class Home extends React.Component<any, any>{
           {/* <PlayListSlider count="10"></PlayListSlider> */}
 
           <FeedCard title='Other news' count='5' categories={process.env.REACT_APP_TOP_STORIES_ID}></FeedCard>
-          <br></br>
+          <FeedCategoryMason ></FeedCategoryMason>
         </IonContent>
       </IonPage>
     );
   }
-};
+}
 
 export default Home;

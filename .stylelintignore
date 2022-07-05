@@ -1,0 +1,7 @@
+android/
+ios/
+.idea/
+build
+gen/
+node_modules/
+public/

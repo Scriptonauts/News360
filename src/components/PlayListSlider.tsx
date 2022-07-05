@@ -27,7 +27,7 @@ const PlayListSlider: React.FC<any> = (props) => {
       fetch(`${process.env.REACT_APP_YT_PL_B_URL}?part=snippet&playlistId=PL39_ud5aKSvk5qvgLe70s5Vs4ezNz7Zli&key=${process.env.REACT_APP_GOOGLE_API_KEY}&maxResults=4`, { mode: 'cors' })
             .then(response => response.json())
             .then(response => {
-                let html = response.items.map(
+                const html = response.items.map(
 
                     (videoItem: any) => (
                         <IonSlide key={videoItem.id}>
@@ -62,7 +62,7 @@ const PlayListSlider: React.FC<any> = (props) => {
                     )
                 );
 
-                let slider = (
+                const slider = (
 
                     <IonSlides pager={true} options={slideOpts} style={{ padding: 0 }}>
                         {html}

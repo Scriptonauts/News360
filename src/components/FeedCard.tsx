@@ -1,42 +1,38 @@
-import { IonCol, IonCard, IonGrid, IonRow, IonSpinner, IonRouterLink } from '@ionic/react';
-
+import { IonCol, IonCard, IonGrid, IonRow, IonRouterLink } from '@ionic/react';
 import React from 'react';
 import TimeAgo from 'javascript-time-ago'
-
 import en from 'javascript-time-ago/locale/en.json'
-import ru from 'javascript-time-ago/locale/ru.json'
 import ReactTimeAgo from 'react-time-ago'
 import Spinner from './Spinner';
 
-let env = process.env;
+const env = process.env;
 
 TimeAgo.addLocale(en)
 
 class FeedCard extends React.Component<any, any> {
 
-    addCategories: any;
+    addCategories: string | undefined;
 
-    constructor(props: any) {
+    constructor(props: object) {
         super(props);
         this.state = { loading: true, feedList: ''};
     }
 
     componentDidMount() {
         if (this.props.categories) {
-            let catQ = '&categories=' + this.props.categories;
+            const catQ = '&categories=' + this.props.categories;
             this.addCategories = catQ;
         }
 
-      fetch(env.REACT_APP_BASE_URL + '/posts/?per_page=' + this.props.count + this.addCategories, { mode: 'cors' })
+      fetch(`${env.REACT_APP_BASE_URL}/posts/?per_page=${this.props.count + this.addCategories}`, { mode: 'cors' })
             .then(response => response.json())
             .then(response => {
                 if (response == '') {
-                    let html = <p style={{ margin: 'auto' }}> No feed at the momemt</p>;
+                    const html = <p style={{ margin: 'auto' }}> No feed at the momemt</p>;
                     this.setState({ feedList: html, loading: false});
                 } else {
-
-                    let html = response.map(
-                        (feedItem: any) => (
+                  const html = response.map(
+                    (feedItem: any) => (
                             <IonCol key={feedItem.id} size='12' sizeSm='12' sizeMd='4' sizeLg='3'>
                                 <IonCard className='ion-no-margin' style={{ boxShadow: 'unset', borderRadius: 0 }}>
                                     <IonRouterLink routerLink={'/article?id=' + feedItem.id}>

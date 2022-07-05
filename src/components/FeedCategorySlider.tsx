@@ -14,7 +14,7 @@ const slideOpts = {
     autoplay: true
 };
 
-let FeedCategorySlider = (props: any) => {
+const FeedCategorySlider = (props: any) => {
     // constructor(props: any) {
     //     super(props);
     //     this.state = { catList: '' }
@@ -25,21 +25,20 @@ let FeedCategorySlider = (props: any) => {
 
     useEffect(() => {
 
-        fetch('https://kwekubright.com/hungry_project/wp-json/wp/v2/categories', { mode: 'cors' })
+        fetch(`${process.env.REACT_APP_BASE_URL}/categories`, { mode: 'cors' })
             .then(response => response.json())
             .then(response => {
-                let html = response.map(
+                const html = response.map(
                     (catItem: any) => (
                         <IonSlide key={catItem.id}>
                             <IonCard className='category-slider' style={{ backgroundImage: `url(${catItem.acf.hungry_image})`, backgroundSize: 'cover', }} routerLink={'/category/' + catItem.id + '/' + catItem.name}>
                                 <div className='cat-bottom-left '><h5>{catItem.name.toUpperCase()}</h5></div>
                             </IonCard>
                         </IonSlide>
-
                     )
                 );
 
-                let slider = (<IonSlides pager={false} options={slideOpts} style={{ padding: '0.2rem' }}>
+                const slider = (<IonSlides pager={false} options={slideOpts} style={{ padding: '0.2rem' }}>
                     {html}
                 </IonSlides>)
 

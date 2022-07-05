@@ -4,11 +4,10 @@ import ReactTimeAgo from "react-time-ago";
 const FeedTabContentReducer = (state = <></>, action: any) => {
     switch (action.type) {
         case 'Switch_FeedTab_Content':
-            let returnValue = <></>;
             fetch('https://kwekubright.com/hungry_project/wp-json/wp/v2/posts/?per_page=' + action.payload.count + '&categories=' + action.payload.category, { mode: 'cors' })
                 .then(response => response.json())
                 .then(response => {
-                    let html = response.map(
+                    const html = response.map(
                         (feedItem: any) => (
                             <IonCol key={feedItem.id} size='12' sizeSm='12' sizeMd='4' sizeLg='3'>
                                 <IonCard className='ion-no-margin' style={{ boxShadow: 'unset', borderRadius: 0 }}>
@@ -39,7 +38,7 @@ const FeedTabContentReducer = (state = <></>, action: any) => {
                     console.log(err);
                 });
 
-            return returnValue;
+            return state;
             break;
 
         default:

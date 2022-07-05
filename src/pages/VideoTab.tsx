@@ -5,13 +5,7 @@ import VideoList from '../components/VideoList';
 
 const VideoTab: React.FC = () => {
 
-
   const uriSegments: any = useParams();
-
-  useEffect(() => {
-
-  }, [])
-
 
   return (
     <IonPage>

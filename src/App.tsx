@@ -10,12 +10,11 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { cart, ellipse, fastFood, home, newspaper, square, triangle, videocam } from 'ionicons/icons';
+import { home, newspaper, videocam } from 'ionicons/icons';
 
 import 'moment-timezone';
 
 import Home from './pages/Home';
-import Tab3 from './pages/Tab3';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
