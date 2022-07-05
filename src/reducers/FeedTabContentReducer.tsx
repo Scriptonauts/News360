@@ -4,7 +4,7 @@ import ReactTimeAgo from "react-time-ago";
 const FeedTabContentReducer = (state = <></>, action: any) => {
     switch (action.type) {
         case 'Switch_FeedTab_Content':
-            fetch('https://kwekubright.com/hungry_project/wp-json/wp/v2/posts/?per_page=' + action.payload.count + '&categories=' + action.payload.category, { mode: 'cors' })
+            fetch(process.env.REACT_APP_BASE_URL + '/posts/?per_page=' + action.payload.count + '&categories=' + action.payload.category, { mode: 'cors' })
                 .then(response => response.json())
                 .then(response => {
                     const html = response.map(
@@ -34,8 +34,8 @@ const FeedTabContentReducer = (state = <></>, action: any) => {
 
                     return html;
                 })
-                .catch(err => {
-                    console.log(err);
+              .catch(err => {
+                  // Error handling
                 });
 
             return state;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonSlides, IonSlide, IonContent, IonCol, IonItem, IonCard, IonCardContent, IonGrid, IonRow, IonAvatar, IonSpinner } from '@ionic/react';
+import { IonSlides, IonSlide, IonCol, IonCard, IonGrid, IonRow} from '@ionic/react';
 import ReactTimeAgo from 'react-time-ago';
 import Spinner from './Spinner';
 

@@ -1,15 +1,10 @@
-import { present } from '@ionic/core/dist/types/utils/overlays';
 import { IonBackButton, IonButtons, IonCard, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactTimeAgo from 'react-time-ago';
-import VideoList from '../components/VideoList';
 
 const SinglePlaylist: React.FC = () => {
-
-
     const [playList, setPlayList] = useState(<></>);
-
     const uriSegments: any = useParams();
 
     useEffect(() => {
@@ -56,7 +51,7 @@ const SinglePlaylist: React.FC = () => {
 
             })
             .catch(err => {
-                console.log(err);
+                // Error handling
             });
     }, [])
 
@@ -85,8 +80,6 @@ const SinglePlaylist: React.FC = () => {
             </IonContent>
         </IonPage>
     );
-
-
 };
 
 export default SinglePlaylist;

@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { IonSlides, IonSlide, IonContent, IonCard } from '@ionic/react';
-import { useSelector } from 'react-redux';
-import SwitchFeedTabContent from '../actions/FeedTabContentAction';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { IonSlides, IonSlide, IonCard } from '@ionic/react';
 
 
 // Optional parameters to pass to the swiper instance.
@@ -15,13 +12,8 @@ const slideOpts = {
 };
 
 const FeedCategorySlider = (props: any) => {
-    // constructor(props: any) {
-    //     super(props);
-    //     this.state = { catList: '' }
-    // }
 
     const [catList, setCatList] = useState(<></>);
-    const dispatch = useDispatch();
 
     useEffect(() => {
 
@@ -45,7 +37,7 @@ const FeedCategorySlider = (props: any) => {
                 setCatList(slider);
             })
             .catch(err => {
-                console.log(err);
+                // Error handling
             });
 
     }, []);

@@ -38,7 +38,7 @@ class FeedTab extends React.Component<any, any> {
     const catQ = '&categories=' + ((this.state.isSingleCat == true) ? this.state.catId : JSON.parse(localStorage.getItem('category-ids')!)[0]);
     this.addCategories = catQ;
 
-    fetch('https://kwekubright.com/hungry_project/wp-json/wp/v2/posts/?per_page=' + this.state.feedCount + this.addCategories, { mode: 'cors' })
+    fetch(process.env.REACT_APP_BASE_URL + '/posts/?per_page=' + this.state.feedCount + this.addCategories, { mode: 'cors' })
       .then(response => response.json())
       .then(response => {
         const html = response.map(
@@ -50,7 +50,7 @@ class FeedTab extends React.Component<any, any> {
 
                     <IonRow  >
                       <IonCol size="4" sizeSm='5' sizeMd='5' sizeLg='5' style={{ padding: '0 5px 0 0' }}>
-                        <img src={feedItem.x_featured_media_medium ? feedItem.x_featured_media_medium : '/images/default.png'} />
+                        <img src={feedItem.x_featured_media_medium ? feedItem.x_featured_media_medium : '/images/default.png'} alt={feedItem.title.rendered} />
                       </IonCol>
                       <IonCol>
                         <h4 className='feed-title' style={{ marginBottom: 0 }}>{feedItem.title.rendered}</h4>
@@ -68,7 +68,7 @@ class FeedTab extends React.Component<any, any> {
         this.setState({ feedList: html });
       })
       .catch(err => {
-        console.log(err);
+        // Error handling
       });
   }
 
@@ -79,7 +79,7 @@ class FeedTab extends React.Component<any, any> {
     this.addCategories = catQ;
 
     this.setState({ content: active })
-    fetch('https://kwekubright.com/hungry_project/wp-json/wp/v2/posts/?per_page=' + this.state.feedCount + this.addCategories, { mode: 'cors' })
+    fetch(process.env.REACT_APP_BASE_URL + '/posts/?per_page=' + this.state.feedCount + this.addCategories, { mode: 'cors' })
       .then(response => response.json())
       .then(response => {
         const html = response.map(

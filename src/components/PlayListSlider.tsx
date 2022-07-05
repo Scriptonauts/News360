@@ -1,11 +1,6 @@
-import { present } from '@ionic/core/dist/types/utils/overlays';
-import { IonBackButton, IonButtons, IonCard, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonSlide, IonSlides, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCard, IonCol, IonGrid, IonRouterLink, IonRow, IonSlide, IonSlides } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import ReactTimeAgo from 'react-time-ago';
-import VideoList from './VideoList';
-
-
 
 const slideOpts = {
     initialSlide: 0,
@@ -17,11 +12,7 @@ const slideOpts = {
 
 const PlayListSlider: React.FC<any> = (props) => {
 
-
-    const [playList, setPlayList] = useState<any>(<></>);
     const [slider, setSlider] = useState<any>(<></>);
-
-    const uriSegments: any = useParams();
 
     useEffect(() => {
       fetch(`${process.env.REACT_APP_YT_PL_B_URL}?part=snippet&playlistId=PL39_ud5aKSvk5qvgLe70s5Vs4ezNz7Zli&key=${process.env.REACT_APP_GOOGLE_API_KEY}&maxResults=4`, { mode: 'cors' })
@@ -72,7 +63,7 @@ const PlayListSlider: React.FC<any> = (props) => {
 
             })
             .catch(err => {
-                console.log(err);
+               // Error handling
             });
     }, [])
 

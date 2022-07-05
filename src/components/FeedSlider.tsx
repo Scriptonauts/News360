@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonSlides, IonSlide, IonContent, IonSpinner, IonRouterLink } from '@ionic/react';
+import { IonSlides, IonSlide, IonRouterLink } from '@ionic/react';
 import Spinner from './Spinner';
 
 // Optional parameters to pass to the swiper instance.

@@ -1,12 +1,9 @@
 import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 import { Markup } from 'interweave';
-import TimeAgo from 'javascript-time-ago'
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en.json';
 
-import en from 'javascript-time-ago/locale/en.json'
-import ru from 'javascript-time-ago/locale/ru.json'
-import ReactTimeAgo from 'react-time-ago'
-import { runInThisContext } from 'vm';
 TimeAgo.addLocale(en)
 
 class Article extends React.Component<any, any> {
@@ -24,19 +21,23 @@ class Article extends React.Component<any, any> {
 
   componentDidMount() {
 
-    fetch('https://kwekubright.com/hungry_project/wp-json/wp/v2/posts/?include[]=' + this.articleId, { mode: 'cors' })
+    fetch(process.env.REACT_APP_BASE_URL+'/posts/?include[]=' + this.articleId, { mode: 'cors' })
       .then(response => response.json())
       .then(response => {
 
-        const article = response.map((data: any) => (
-          <IonGrid >
+        const article = response.map((data: any, key: number) => (
+          <IonGrid key={key}>
             <IonRow>
               <IonCol size='12'>
                 <p className='article-cat-list'>{data.x_categories}</p>
                 <h2 style={{ fontWeight: 600, marginBottom: 0 }}>{data.title.rendered}</h2>
                 <p style={{ marginBottom: '1rem' }}>Posted: {new Date(data.date).toUTCString()}</p>
 
-                <img src={data.x_featured_media_large} style={{ marginBottom: '1rem' }} />
+                {
+                  data.x_featured_media_large ?
+                    <img src={data.x_featured_media_large} style={{ marginBottom: '1rem' }} alt={data.title.rendered} />
+                    : ''
+                }
 
               </IonCol>
               <IonCol>
@@ -50,7 +51,7 @@ class Article extends React.Component<any, any> {
 
       })
       .catch(err => {
-        console.log(err);
+        // Error handling
       });
   }
 
