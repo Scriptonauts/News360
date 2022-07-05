@@ -1,19 +1,11 @@
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import FeedCard from '../components/FeedCard';
-import './FeedTab.css';
-import FeedSegment from '../components/FeedSegment';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const CategoryFeed: React.FC = () => {
 
-
   const uriSegments: any = useParams();
-
-  useEffect(() => {
-
-  }, [])
-
 
   return (
     <IonPage>

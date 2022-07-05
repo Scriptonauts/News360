@@ -11,7 +11,7 @@ const VideoList: React.FC<any> = () => {
         fetch('https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=UCvJiYiBUbw4tmpRSZT2r1Hw&maxResults=25&key=AIzaSyC6USfT6XFpEcfaFvIxEsrrGFKMAvztnpo', { mode: 'cors' })
             .then(response => response.json())
             .then(response => {
-                let html = response.items.map(
+                const html = response.items.map(
                     (videoItem: any) => (
                         <IonCol key={videoItem.id} size='12' sizeSm='12' sizeMd='4' sizeLg='3'>
                             <IonCard className='ion-no-margin' style={{ boxShadow: 'unset', borderRadius: 0 }}>
@@ -21,7 +21,7 @@ const VideoList: React.FC<any> = () => {
 
                                         <IonRow  >
                                             <IonCol size="12" sizeSm='12' sizeMd='12' sizeLg='12' style={{ padding: '0 5px 0 0' }}>
-                                                <img src={(videoItem.snippet.thumbnails.hasOwnProperty('maxres')) ? videoItem.snippet.thumbnails.maxres.url : videoItem.snippet.thumbnails.high.url} />
+                                                <img src={(videoItem.snippet.thumbnails.hasOwnProperty.call('maxres')) ? videoItem.snippet.thumbnails.maxres.url : videoItem.snippet.thumbnails.high.url} />
                                             </IonCol>
                                             <IonCol>
                                                 <h4 className='feed-title' style={{ marginBottom: 0 }}>{videoItem.snippet.title}</h4>

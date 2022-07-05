@@ -6,7 +6,7 @@ http://ionicframework.com/docs/theming/ */
   /** primary **/
   --ion-color-primary: #ad0000;
   --ion-color-primary-rgb: 56, 128, 255;
-  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast: #fff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
   --ion-color-primary-shade: #ad0000;
   --ion-color-primary-tint: #ad0000;
@@ -14,7 +14,7 @@ http://ionicframework.com/docs/theming/ */
   /** secondary **/
   --ion-color-secondary: #ad0000;
   --ion-color-secondary-rgb: 61, 194, 255;
-  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast: #fff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
   --ion-color-secondary-shade: #ad0000;
   --ion-color-secondary-tint: #ad0000;
@@ -22,7 +22,7 @@ http://ionicframework.com/docs/theming/ */
   /** tertiary **/
   --ion-color-tertiary: #5260ff;
   --ion-color-tertiary-rgb: 82, 96, 255;
-  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast: #fff;
   --ion-color-tertiary-contrast-rgb: 255, 255, 255;
   --ion-color-tertiary-shade: #4854e0;
   --ion-color-tertiary-tint: #6370ff;
@@ -30,7 +30,7 @@ http://ionicframework.com/docs/theming/ */
   /** success **/
   --ion-color-success: #2dd36f;
   --ion-color-success-rgb: 45, 211, 111;
-  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast: #fff;
   --ion-color-success-contrast-rgb: 255, 255, 255;
   --ion-color-success-shade: #28ba62;
   --ion-color-success-tint: #42d77d;
@@ -38,7 +38,7 @@ http://ionicframework.com/docs/theming/ */
   /** warning **/
   --ion-color-warning: #ffc409;
   --ion-color-warning-rgb: 255, 196, 9;
-  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast: #000;
   --ion-color-warning-contrast-rgb: 0, 0, 0;
   --ion-color-warning-shade: #e0ac08;
   --ion-color-warning-tint: #ffca22;
@@ -46,7 +46,7 @@ http://ionicframework.com/docs/theming/ */
   /** danger **/
   --ion-color-danger: #eb445a;
   --ion-color-danger-rgb: 235, 68, 90;
-  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast: #fff;
   --ion-color-danger-contrast-rgb: 255, 255, 255;
   --ion-color-danger-shade: #cf3c4f;
   --ion-color-danger-tint: #ed576b;
@@ -54,7 +54,7 @@ http://ionicframework.com/docs/theming/ */
   /** dark **/
   --ion-color-dark: #222428;
   --ion-color-dark-rgb: 34, 36, 40;
-  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast: #fff;
   --ion-color-dark-contrast-rgb: 255, 255, 255;
   --ion-color-dark-shade: #1e2023;
   --ion-color-dark-tint: #383a3e;
@@ -62,7 +62,7 @@ http://ionicframework.com/docs/theming/ */
   /** medium **/
   --ion-color-medium: #92949c;
   --ion-color-medium-rgb: 146, 148, 156;
-  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast: #fff;
   --ion-color-medium-contrast-rgb: 255, 255, 255;
   --ion-color-medium-shade: #808289;
   --ion-color-medium-tint: #9d9fa6;
@@ -70,7 +70,7 @@ http://ionicframework.com/docs/theming/ */
   /** light **/
   --ion-color-light: #f4f5f8;
   --ion-color-light-rgb: 244, 245, 248;
-  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast: #000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
@@ -105,6 +105,7 @@ ion-tab-button {
   --color: var(--ion-color-medium);
   --color-selected: var(--ion-color-primary);
 }
+
 ion-tab-button::before {
   background-color: transparent;
   display: block;
@@ -117,48 +118,57 @@ ion-tab-button::before {
 ion-tab-button.tab-selected::before {
   background-color: var(--ion-color-primary);
 }
+
 .article-cat-list {
   color: #ad0000;
 }
+
 .no-margin {
-  margin: 0px;
+  margin: 0;
 }
 
 .no-padding {
-  padding: 0px;
+  padding: 0;
 }
+
 ion-card-title,
 .feed-title {
   font-size: 1rem;
   font-weight: 600;
-  color: #333333;
+  color: #333;
   text-align: left;
 }
+
 .feed-meta {
-  color: #333333;
+  color: #333;
   text-align: left;
 }
+
 .feed-card {
   display: grid;
   grid-template-columns: 25.8rem;
 }
+
 .bottom-left {
   position: absolute;
-  bottom: 0rem;
-  left: 0rem;
+  bottom: 0;
+  left: 0;
   width: 100%;
   padding: 0.5rem 0 2.4rem 1rem;
   text-align: left;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.048) 0%,
-    rgba(39, 39, 39, 0.822) 30%,
-    rgba(0, 0, 0, 0.788) 100%
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.048) 0%,
+      rgba(39, 39, 39, 0.822) 30%,
+      rgba(0, 0, 0, 0.788) 100%
+    );
 }
+
 .slider-title {
-  color: #ffffff;
+  color: #fff;
 }
+
 .category-slider {
   width: 100%;
   height: 90px;
@@ -176,28 +186,33 @@ ion-card-title,
   background-color: darkkhaki;
   padding: 0;
 }
+
 .cat-bottom-left {
   position: absolute;
-  bottom: 0rem;
-  left: 0rem;
+  bottom: 0;
+  left: 0;
   border-radius: 0 0 1rem 1rem;
   width: 100%;
   padding: 0.5rem 0 0.4rem 1rem;
   text-align: left;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.048) 0%,
-    rgba(39, 39, 39, 0.822) 30%,
-    rgba(0, 0, 0, 0.788) 100%
-  );
-  color: #ffffff;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.048) 0%,
+      rgba(39, 39, 39, 0.822) 30%,
+      rgba(0, 0, 0, 0.788) 100%
+    );
+  color: #fff;
 }
+
 .article-text p {
   font-size: 20px;
 }
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
+
   /* 16:9 */
   height: 0;
 }

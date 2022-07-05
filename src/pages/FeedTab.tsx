@@ -1,5 +1,4 @@
 import { IonBackButton, IonButtons, IonCard, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import './FeedTab.css';
 import FeedSegment from '../components/FeedSegment';
 import React from 'react';
 import ReactTimeAgo from 'react-time-ago';
@@ -36,13 +35,13 @@ class FeedTab extends React.Component<any, any> {
       this.setState({ feedCategoryName: this.feedCategoryName })
     }
 
-    let catQ = '&categories=' + ((this.state.isSingleCat == true) ? this.state.catId : JSON.parse(localStorage.getItem('category-ids')!)[0]);
+    const catQ = '&categories=' + ((this.state.isSingleCat == true) ? this.state.catId : JSON.parse(localStorage.getItem('category-ids')!)[0]);
     this.addCategories = catQ;
 
     fetch('https://kwekubright.com/hungry_project/wp-json/wp/v2/posts/?per_page=' + this.state.feedCount + this.addCategories, { mode: 'cors' })
       .then(response => response.json())
       .then(response => {
-        let html = response.map(
+        const html = response.map(
           (feedItem: any) => (
             <IonCol key={feedItem.id} size='12' sizeSm='12' sizeMd='4' sizeLg='3'>
               <IonCard className='ion-no-margin' style={{ boxShadow: 'unset', borderRadius: 0 }}>
@@ -74,16 +73,16 @@ class FeedTab extends React.Component<any, any> {
   }
 
   segmentHandler() {
-    let active = localStorage.getItem('feed-active-segment');
+    const active = localStorage.getItem('feed-active-segment');
 
-    let catQ = '&categories=' + localStorage.getItem('feed-active-segment');
+    const catQ = '&categories=' + localStorage.getItem('feed-active-segment');
     this.addCategories = catQ;
 
     this.setState({ content: active })
     fetch('https://kwekubright.com/hungry_project/wp-json/wp/v2/posts/?per_page=' + this.state.feedCount + this.addCategories, { mode: 'cors' })
       .then(response => response.json())
       .then(response => {
-        let html = response.map(
+        const html = response.map(
           (feedItem: any) => (
             <IonCol key={feedItem.id} size='12' sizeSm='12' sizeMd='4' sizeLg='3'>
               <IonCard className='ion-no-margin' style={{ boxShadow: 'unset', borderRadius: 0 }}>
@@ -144,7 +143,7 @@ class FeedTab extends React.Component<any, any> {
         </IonContent>
       </IonPage>
     );
-  };
-};
+  }
+}
 
 export default FeedTab;

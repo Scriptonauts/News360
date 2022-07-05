@@ -1,13 +1,8 @@
 import React from 'react';
-import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonBadge, IonRouterOutlet, IonSegment, IonSegmentButton, CreateAnimation } from '@ionic/react';
-import ReactTransitionGroup from 'react-transition-group'
-
+import { IonLabel, IonSegment, IonSegmentButton, CreateAnimation } from '@ionic/react';
 import './FeedSegment.css';
-import ReactDOM from 'react-dom';
-import FeedCard from './FeedCard';
 
-
-let category = [
+const category = [
     {
         name: 'Education',
         image: 'https://www.ugaana.org/wp-content/uploads/2018/02/Legon4.png',
@@ -38,7 +33,7 @@ let category = [
     }
 ];
 
-let segmentDataObject = {
+const segmentDataObject = {
     education: [
         {
             title: 'Self-driving truck makes delivery 10 hours faster than a human',
@@ -146,12 +141,8 @@ let segmentDataObject = {
 
 }
 
-// let fetchSegmentData = (segment_name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined) => {
-//     return )
-// }
-
 class FeedSegment extends React.Component<any, any> {
-    catIds = Array();
+    catIds: any = [];
     constructor(props: any) {
         super(props);
         this.state = { segments: '' }
@@ -159,10 +150,11 @@ class FeedSegment extends React.Component<any, any> {
     }
 
     componentDidMount() {
-        const segments = JSON.parse(localStorage.getItem('categories')!).map(
-            (cateItem: any) => {
-                this.catIds.push(cateItem.id);
-                return (
+      const segments = JSON.parse(localStorage.getItem('categories')!);
+      const segmentsData = segments.map(
+        (cateItem: any) => {
+            this.catIds.push(cateItem.id);
+            return (
                     <IonSegmentButton key={cateItem.id} value={cateItem.id} onClick={this.props.segmentHandler}>
                         <IonLabel>{cateItem.name}</IonLabel>
                     </IonSegmentButton>
@@ -172,14 +164,14 @@ class FeedSegment extends React.Component<any, any> {
 
         localStorage.setItem('category-ids', JSON.stringify(this.catIds))
 
-        let buildSegment = (<IonSegment scrollable onIonChange={e => {
-            let s: string = e.detail.value!;
+        const buildSegment = (<IonSegment scrollable onIonChange={e => {
+            const s: string = e.detail.value!;
             localStorage.setItem('feed-active-segment', s);
         }
 
         } color='success' value={this.catIds[0]} >
 
-            {segments}
+            {segmentsData}
         </IonSegment>)
 
         this.setState({ segment: buildSegment })
@@ -191,6 +183,6 @@ class FeedSegment extends React.Component<any, any> {
             <>{this.state.segment}</>
         )
     }
-};
+}
 
 export default FeedSegment;
