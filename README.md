@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/News360-v1.0.0-purple.svg?style=flat-square)
+![](https://img.shields.io/badge/News360-v1.0.0-blueviolet.svg?style=flat-square)
 
 # News360
 
@@ -61,7 +61,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Read the [contributing guide](Contribution.md) for more information.
 
 ## Show your support
 
