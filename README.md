@@ -10,7 +10,7 @@
 - Ionic Framework
 - React 
 - Redux
-- Wordpress
+- Wordpress API
 - TypeScript
 
 
