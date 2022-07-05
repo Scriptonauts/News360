@@ -1,5 +1,4 @@
 import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import './Article.css';
 import React from 'react';
 import { Markup } from 'interweave';
 import TimeAgo from 'javascript-time-ago'

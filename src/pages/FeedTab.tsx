@@ -1,5 +1,4 @@
 import { IonBackButton, IonButtons, IonCard, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRouterLink, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import './FeedTab.css';
 import FeedSegment from '../components/FeedSegment';
 import React from 'react';
 import ReactTimeAgo from 'react-time-ago';

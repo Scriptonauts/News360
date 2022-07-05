@@ -6,7 +6,6 @@ import FeedCardSlider from '../components/FeedCardSlider';
 import FeedCategoryMason from '../components/FeedCategoryMason';
 import FeedCategorySlider from '../components/FeedCategorySlider';
 import FeedSlider from '../components/FeedSlider';
-import './Home.css';
 
 class Home extends React.Component<any, any>{
   categories: any = [];

@@ -1,6 +1,5 @@
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import FeedCard from '../components/FeedCard';
-import './FeedTab.css';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 

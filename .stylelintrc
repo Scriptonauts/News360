@@ -15,7 +15,8 @@
           "apply",
           "variants",
           "responsive",
-          "screen"
+          "screen",
+          "ion-"
         ]
       }
     ],
@@ -27,8 +28,16 @@
           "apply",
           "variants",
           "responsive",
-          "screen"
+          "screen",
+          "ion-"
         ]
+      }
+    ],
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignoreNamespaces": [ "/.*/"],
+        "ignoreTypes": [ "/.*/"]
       }
     ],
     "csstree/validator": true
