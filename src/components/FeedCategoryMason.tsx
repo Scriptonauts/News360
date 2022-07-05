@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  IonSlides, IonSlide, IonContent, IonCol, IonItem, IonCard, IonCardContent, IonGrid, IonRow, IonAvatar,
-} from '@ionic/react';
+import {IonCol, IonCard, IonGrid, IonRow} from '@ionic/react';
 
 // Optional parameters to pass to the swiper instance.
 // See http://idangero.us/swiper/api/ for valid options.

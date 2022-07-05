@@ -1,11 +1,8 @@
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
 import VideoList from '../components/VideoList';
 
 const VideoTab: React.FC = () => {
-
-  const uriSegments: any = useParams();
 
   return (
     <IonPage>
@@ -30,8 +27,6 @@ const VideoTab: React.FC = () => {
       </IonContent>
     </IonPage>
   );
-
-
 };
 
 export default VideoTab;

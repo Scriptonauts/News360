@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonLabel, IonSegment, IonSegmentButton, CreateAnimation } from '@ionic/react';
+import { IonLabel, IonSegment, IonSegmentButton} from '@ionic/react';
 import './FeedSegment.css';
 
 const category = [

@@ -1,8 +1,6 @@
-import { IonCol, IonCard, IonRouterLink, IonGrid, IonRow, IonContent, IonModal, useIonModal } from "@ionic/react";
+import { IonCol, IonCard, IonRouterLink, IonGrid, IonRow, IonContent, IonModal } from "@ionic/react";
 import { useEffect, useState } from "react";
 import ReactTimeAgo from "react-time-ago";
-import ExploreContainer from "./ExploreContainer";
-
 
 const VideoList: React.FC<any> = () => {
     const [videoList, setVideoList] = useState(<></>);
