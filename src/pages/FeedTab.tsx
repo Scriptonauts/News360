@@ -2,6 +2,7 @@ import { IonBackButton, IonButtons, IonCard, IonCol, IonContent, IonGrid, IonHea
 import FeedSegment from '../components/FeedSegment';
 import React from 'react';
 import ReactTimeAgo from 'react-time-ago';
+import AppHeader from '../components/AppHeader';
 
 class FeedTab extends React.Component<any, any> {
   queryParams: any;
@@ -109,11 +110,8 @@ class FeedTab extends React.Component<any, any> {
         this.setState({ feedList: html });
       })
       .catch(err => {
-        console.log(err);
+        // Error handling
       });
-
-
-
   }
 
 
@@ -121,25 +119,11 @@ class FeedTab extends React.Component<any, any> {
 
     return (
       <IonPage>
-        <IonHeader style={{ backgroundColor: '#ad0000', color: '#ffffff' }}>
-          <IonToolbar color='#33cc66'>
-            <IonButtons slot="start">
-              <IonBackButton defaultHref="/home" />
-            </IonButtons>
-            <IonTitle>{this.state.feedCategoryName} Feed</IonTitle>
-          </IonToolbar>
-          {this.state.segment}
-        </IonHeader>
+        <AppHeader title="Feed" segment={this.state.segment} backButton={true} />
         <IonContent id="feed-tab-content-container" fullscreen>
-          <IonHeader collapse="condense">
-            <IonToolbar>
-              <IonTitle size="large">Feed</IonTitle>
-
-            </IonToolbar>
-          </IonHeader>
-          <h4 style={{ marginLeft: "1rem" }}>{this.props.title}</h4>
           <IonGrid style={{ paddingTop: '0rem', marginTop: '0rem' }}>
-            <IonRow >{this.state.feedList}</IonRow></IonGrid >
+            <IonRow >{this.state.feedList}</IonRow>
+          </IonGrid >
         </IonContent>
       </IonPage>
     );
