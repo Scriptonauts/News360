@@ -1,8 +1,9 @@
-import { IonBackButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCol, IonContent, IonGrid, IonPage, IonRow } from '@ionic/react';
 import React from 'react';
 import { Markup } from 'interweave';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en.json';
+import AppHeader from '../components/AppHeader';
 
 TimeAgo.addLocale(en)
 
@@ -58,22 +59,13 @@ class Article extends React.Component<any, any> {
   render() {
     return (
       <IonPage>
-        <IonHeader style={{ backgroundColor: '#ad0000', color: '#ffffff' }}>
-          <IonToolbar color='#33cc66'>
-            <IonButtons slot="start">
-              <IonBackButton defaultHref={"/home"} />
-            </IonButtons>
-            <IonTitle>Article</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-
+        <AppHeader title="Article" backButton={true} />
         <IonContent id="feed-tab-content-container" >
           {this.state.article}
         </IonContent>
       </IonPage>
     );
   }
-
 }
 
 export default Article;

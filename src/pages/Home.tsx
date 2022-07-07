@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 import { ReactNode } from 'react';
+import AppHeader from '../components/AppHeader';
 import FeedCard from '../components/FeedCard';
 import FeedCardSlider from '../components/FeedCardSlider';
 import FeedCategoryMason from '../components/FeedCategoryMason';
@@ -39,25 +40,14 @@ class Home extends React.Component<any, any>{
   render(): ReactNode {
     return (
       <IonPage>
-        <IonHeader style={{ backgroundColor: '#ad0000', color: '#ffffff' }}>
-          <IonToolbar color='#33cc66'>
-            <IonTitle>Home</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <AppHeader title="Home" />
         <IonContent fullscreen>
-          <IonHeader collapse="condense">
-            <IonToolbar>
-              <IonTitle size="large">Home</IonTitle>
-
-            </IonToolbar>
-          </IonHeader>
           <FeedSlider count='5' categories={process.env.REACT_APP_SLIDER_CATEGORY_ID}></FeedSlider>
           <FeedCategorySlider></FeedCategorySlider>
 
-
           <FeedCard title='Top stories' count='5' categories={process.env.REACT_APP_TOP_STORIES_ID}></FeedCard>
 
-          <FeedCardSlider title='Op-ed' count='5' categories='1'></FeedCardSlider>
+          <FeedCardSlider title='Op-ed' count='5' categories={process.env.REACT_APP_SLIDER_CATEGORY_ID}></FeedCardSlider>
 
           {/* <PlayListSlider count="10"></PlayListSlider> */}
 

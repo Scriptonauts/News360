@@ -47,8 +47,8 @@ To get a local copy up and running follow these simple example steps.
 👤 **Kweku Bright**
 
 - GitHub: [@kwekubright](https://github.com/kwekubright)
-- Twitter: [@twitterhandle](https://twitter.com/kwekubright_)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/kwekubright)
+- Twitter: [@kwekubright_](https://twitter.com/kwekubright_)
+- LinkedIn: [Kweku Bright](https://linkedin.com/in/kwekubright)
 
 👤 **Nii Darku**
 

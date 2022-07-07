@@ -2,6 +2,7 @@ import { IonBackButton, IonButtons, IonCard, IonCol, IonContent, IonGrid, IonHea
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactTimeAgo from 'react-time-ago';
+import AppHeader from '../components/AppHeader';
 
 const SinglePlaylist: React.FC = () => {
     const [playList, setPlayList] = useState(<></>);
@@ -58,22 +59,8 @@ const SinglePlaylist: React.FC = () => {
 
     return (
         <IonPage >
-            <IonHeader style={{ backgroundColor: '#ad0000', color: '#ffffff' }}>
-                <IonToolbar color='#33cc66'>
-                    <IonButtons slot="start">
-                        <IonBackButton defaultHref="/home" />
-                    </IonButtons>
-                    <IonTitle>{uriSegments.title} </IonTitle>
-                </IonToolbar>
-            </IonHeader>
+        <AppHeader title={uriSegments.title}  backButton={true} />
             <IonContent fullscreen>
-                <IonHeader collapse="condense">
-                    <IonToolbar>
-                        <IonTitle size="large">Playlist</IonTitle>
-
-                    </IonToolbar>
-                </IonHeader>
-
                 <IonRow>
                     {playList}
                 </IonRow>
