@@ -1,0 +1,41 @@
+.ioncard {
+  padding: 0;
+  box-shadow: none;
+  margin-right: 0;
+}
+
+.iongrid {
+  padding: 0;
+}
+
+.ionrow {
+  padding: 0;
+}
+
+.category-mason {
+  background-size: "cover";
+  height: "12.7rem";
+}
+
+.cat-bottom-left {
+  width: 100%;
+}
+
+.ioncard1 {
+  padding: 0;
+  box-shadow: "none";
+  margin-left: 0;
+}
+
+.category-mason {
+  background-size: cover;
+  height: 6rem;
+}
+
+.category-slider {
+  background-size: cover;
+}
+
+.ionslides {
+  padding: 0.2rem;
+}
