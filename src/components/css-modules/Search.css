@@ -1,0 +1,5 @@
+#search-form > .searchbar-input-container > input {
+  border: 0;
+  box-shadow: none;
+  border-radius: 20px;
+}

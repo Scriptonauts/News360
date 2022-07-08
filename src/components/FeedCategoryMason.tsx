@@ -41,7 +41,7 @@ class FeedCategoryMason extends React.Component {
           <IonCol size="6" style={{}}>
             <IonCard className="ioncard">
               <div
-                className="category-mason"
+                className="category-mason1"
                 style={{
                   backgroundImage: `url(${category[0].image})`,
                 }}
@@ -67,7 +67,7 @@ class FeedCategoryMason extends React.Component {
             </IonCard>
             <IonCard className="ioncard1">
               <div
-                className="category-mason1"
+                className="category-mason"
                 style={{
                   backgroundImage: `url(${category[2].image})`,
                 }}

@@ -12,9 +12,10 @@
   padding: 0;
 }
 
-.category-mason {
+.category-mason1 {
   background-size: cover;
-  height: 12.7rem;
+  height: 11.7rem !important;
+  border-radius: 1rem;
 }
 
 .cat-bottom-left {
@@ -27,7 +28,7 @@
   margin-left: 0;
 }
 
-.category-mason1 {
+.category-mason {
   background-size: cover;
   height: 6rem;
 }
