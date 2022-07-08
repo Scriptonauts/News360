@@ -1,0 +1,29 @@
+.ion-no-margin {
+  box-shadow: unset;
+  border-radius: 0;
+}
+
+.iongrid {
+  padding: 0;
+}
+
+.ioncol1 {
+  padding: 0 5px 0 0;
+}
+
+.feed-title {
+  margin-bottom: 0;
+}
+
+.heading-text {
+  margin-left: 1rem;
+}
+
+.grid {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.ion-text-center {
+  margin: 100px auto;
+}

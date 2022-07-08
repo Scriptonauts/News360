@@ -1,11 +1,6 @@
 {
-  "extends": [
-    "stylelint-config-standard"
-  ],
-  "plugins": [
-    "stylelint-scss",
-    "stylelint-csstree-validator"
-  ],
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-scss", "stylelint-csstree-validator"],
   "rules": {
     "at-rule-no-unknown": [
       true,
@@ -36,8 +31,8 @@
     "selector-type-no-unknown": [
       true,
       {
-        "ignoreNamespaces": [ "/.*/"],
-        "ignoreTypes": [ "/.*/"]
+        "ignoreNamespaces": ["/.*/"],
+        "ignoreTypes": ["/.*/"]
       }
     ],
     "csstree/validator": true
