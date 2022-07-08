@@ -13,8 +13,8 @@
 }
 
 .category-mason {
-  background-size: "cover";
-  height: "12.7rem";
+  background-size: cover;
+  height: 12.7rem;
 }
 
 .cat-bottom-left {
@@ -23,7 +23,7 @@
 
 .ioncard1 {
   padding: 0;
-  box-shadow: "none";
+  box-shadow: none;
   margin-left: 0;
 }
 
