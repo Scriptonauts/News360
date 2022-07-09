@@ -24,6 +24,7 @@ const FeedCategorySlider = (props: any) => {
               className="category-slider"
               style={{
                 backgroundImage: `url(${catItem.acf.hungry_image})`,
+                backgroundSize: "cover",
               }}
               routerLink={"/category/" + catItem.id + "/" + catItem.name}
             >

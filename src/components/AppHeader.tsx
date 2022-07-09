@@ -37,9 +37,11 @@ const AppHeader = (props: any) => {
           </IonButton>
         </IonButtons>
 
-        {props.title === "Search" ? <SearchForm /> : null}
+        {props.title === "Search" ? (
+          <SearchForm searchHandler={(e: string) => props.searchHandler(e)} />
+        ) : null}
 
-        <HeaderPopover />
+        <HeaderPopover page={props.title} />
       </IonToolbar>
       {props.segment !== "" ? props.segment : null}
     </IonHeader>
@@ -53,6 +55,9 @@ AppHeader.defaultProps = {
   backButton: false,
   segment: "",
   categoryName: "",
+  searchHandler: (e: any) => {
+    return;
+  },
 };
 
 export default AppHeader;

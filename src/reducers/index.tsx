@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux';
-import FeedTabContentReducer from './FeedTabContentReducer';
+import { combineReducers } from "redux";
+import FeedTabContentReducer from "./FeedTabContentReducer";
 
 const allReducers = combineReducers({
   feedTabContent: FeedTabContentReducer,
