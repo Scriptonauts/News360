@@ -33,7 +33,7 @@ class Article extends React.Component<any, any> {
               <IonCol size="12">
                 <p className="article-cat-list">{data.x_categories}</p>
                 <h2 style={{ fontWeight: 600, marginBottom: 0 }}>
-                  {decode(data.title.rendered, {level: "html5"})}
+                  {decode(data.title.rendered, { level: "html5" })}
                 </h2>
                 <p style={{ marginBottom: "1rem" }}>
                   Posted: {new Date(data.date).toUTCString()}
