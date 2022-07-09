@@ -4,6 +4,7 @@ import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import ReactTimeAgo from "react-time-ago";
 import Spinner from "./Spinner";
+import "./FeedCard.css";
 
 const env = process.env;
 

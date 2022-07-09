@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { IonSlides, IonSlide, IonCard } from "@ionic/react";
+import "./FeedCategoryMason.css";
 
 // Optional parameters to pass to the swiper instance.
 // See http://idangero.us/swiper/api/ for valid options.
@@ -35,11 +36,7 @@ const FeedCategorySlider = (props: any) => {
         ));
 
         const slider = (
-          <IonSlides
-            pager={false}
-            options={slideOpts}
-            style={{ padding: "0.2rem" }}
-          >
+          <IonSlides className="ionslides" pager={false} options={slideOpts}>
             {html}
           </IonSlides>
         );

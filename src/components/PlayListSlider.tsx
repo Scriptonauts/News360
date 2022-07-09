@@ -9,6 +9,7 @@ import {
 } from "@ionic/react";
 import React, { useEffect, useState } from "react";
 import ReactTimeAgo from "react-time-ago";
+import "./FeedCard.css";
 
 const slideOpts = {
   initialSlide: 0,
@@ -36,12 +37,9 @@ const PlayListSlider: React.FC<any> = (props) => {
               sizeMd="4"
               sizeLg="3"
             >
-              <IonCard
-                className="ion-no-margin"
-                style={{ boxShadow: "unset", borderRadius: 0 }}
-              >
+              <IonCard className="ion-no-margin">
                 <IonRouterLink routerLink="/playlist-items">
-                  <IonGrid style={{ padding: 0 }}>
+                  <IonGrid className="iongrid">
                     <IonRow>
                       <IonCol
                         size="12"
@@ -66,7 +64,7 @@ const PlayListSlider: React.FC<any> = (props) => {
                         </div>
                       </IonCol>
                       <IonCol>
-                        <h4 className="feed-title" style={{ marginBottom: 0 }}>
+                        <h4 className="feed-title">
                           {videoItem.snippet.title}
                         </h4>
                         <ReactTimeAgo

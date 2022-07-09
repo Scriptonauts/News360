@@ -1,5 +1,6 @@
 import React from "react";
 import { IonCol, IonCard, IonGrid, IonRow } from "@ionic/react";
+import "./FeedCategoryMason.css";
 
 // Optional parameters to pass to the swiper instance.
 // See http://idangero.us/swiper/api/ for valid options.
@@ -35,49 +36,43 @@ const category = [
 class FeedCategoryMason extends React.Component {
   render() {
     return (
-      <IonGrid style={{ padding: 0 }}>
-        <IonRow style={{ padding: 0 }}>
+      <IonGrid className="iongrid">
+        <IonRow className="ionrow">
           <IonCol size="6" style={{}}>
-            <IonCard style={{ padding: 0, boxShadow: "none", marginRight: 0 }}>
+            <IonCard className="ioncard">
               <div
-                className="category-mason"
+                className="category-mason1"
                 style={{
                   backgroundImage: `url(${category[0].image})`,
-                  backgroundSize: "cover",
-                  height: "12.7rem",
                 }}
               >
-                <div className="cat-bottom-left " style={{ width: "100%" }}>
+                <div className="cat-bottom-left ">
                   <h5>{category[0].name}</h5>
                 </div>
               </div>
             </IonCard>
           </IonCol>
           <IonCol size="6">
-            <IonCard style={{ padding: 0, boxShadow: "none", marginLeft: 0 }}>
+            <IonCard className="ioncard1">
               <div
                 className="category-mason"
                 style={{
                   backgroundImage: `url(${category[1].image})`,
-                  backgroundSize: "cover",
-                  height: "6rem",
                 }}
               >
-                <div className="cat-bottom-left " style={{ width: "100%" }}>
+                <div className="cat-bottom-left">
                   <h5>{category[1].name}</h5>
                 </div>
               </div>
             </IonCard>
-            <IonCard style={{ padding: 0, boxShadow: "none", marginLeft: 0 }}>
+            <IonCard className="ioncard1">
               <div
                 className="category-mason"
                 style={{
                   backgroundImage: `url(${category[2].image})`,
-                  backgroundSize: "cover",
-                  height: "6rem",
                 }}
               >
-                <div className="cat-bottom-left " style={{ width: "100%" }}>
+                <div className="cat-bottom-left ">
                   <h5>{category[2].name}</h5>
                 </div>
               </div>

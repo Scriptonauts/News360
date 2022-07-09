@@ -7,14 +7,15 @@ import {
   IonIcon,
   IonButton,
 } from "@ionic/react";
-import { ellipsisVerticalOutline } from "ionicons/icons";
 import PropTypes from "prop-types";
+import "./AppHeader.css";
+import { ellipsisVerticalOutline } from "ionicons/icons";
 import HeaderPopover from "./HeaderPopover";
 import SearchForm from "./SearchForm";
 
 const AppHeader = (props: any) => {
   return (
-    <IonHeader style={{ backgroundColor: "#ad0000", color: "#ffffff" }}>
+    <IonHeader className="ionheader-section">
       <IonToolbar color="#33cc66">
         {props.backButton ? (
           <IonButtons slot="start">
@@ -50,7 +51,6 @@ const AppHeader = (props: any) => {
 AppHeader.propTypes = {
   title: PropTypes.string.isRequired,
 };
-
 AppHeader.defaultProps = {
   backButton: false,
   segment: "",

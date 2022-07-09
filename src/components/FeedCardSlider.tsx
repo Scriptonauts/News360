@@ -9,6 +9,7 @@ import {
 } from "@ionic/react";
 import ReactTimeAgo from "react-time-ago";
 import Spinner from "./Spinner";
+import "./FeedCard.css";
 
 // Optional parameters to pass to the swiper instance.
 // See http://idangero.us/swiper/api/ for valid options.
@@ -44,26 +45,20 @@ class FeedCardSlider extends React.Component<any, any> {
         const html = response.map((feedItem: any) => (
           <IonSlide key={feedItem.id}>
             <IonCol size="12" sizeSm="12" sizeMd="4" sizeLg="3">
-              <IonCard
-                className="ion-no-margin"
-                routerLink="/article"
-                style={{ boxShadow: "unset", borderRadius: 0 }}
-              >
+              <IonCard className="ion-no-margin" routerLink="/article">
                 <IonGrid style={{ padding: 0 }}>
                   <IonRow>
                     <IonCol
+                      className="ioncol1"
                       size="4"
                       sizeSm="5"
                       sizeMd="5"
                       sizeLg="5"
-                      style={{ padding: "0 5px 0 0" }}
                     >
                       <img src={feedItem.x_featured_media_medium} />
                     </IonCol>
                     <IonCol>
-                      <h4 className="feed-title" style={{ marginBottom: 0 }}>
-                        {feedItem.title.rendered}
-                      </h4>
+                      <h4 className="feed-title">{feedItem.title.rendered}</h4>
                       <ReactTimeAgo date={feedItem.date} locale="en-US" />
                     </IonCol>
                   </IonRow>
@@ -76,7 +71,7 @@ class FeedCardSlider extends React.Component<any, any> {
         this.setState({ feedList: html });
 
         const slider = (
-          <IonGrid style={{ paddingTop: "0rem", marginTop: "0rem" }}>
+          <IonGrid className="grid">
             <IonRow>
               <IonSlides
                 pager={true}
@@ -98,7 +93,7 @@ class FeedCardSlider extends React.Component<any, any> {
   render() {
     return (
       <>
-        <h4 style={{ marginLeft: "1rem" }}>{this.props.title}</h4>
+        <h4 className="heading-text">{this.props.title}</h4>
         <>{this.state.slider}</>
       </>
     );

@@ -9,6 +9,7 @@ import {
 } from "@ionic/react";
 import { useEffect, useState } from "react";
 import ReactTimeAgo from "react-time-ago";
+import "./FeedCard.css";
 
 const VideoList: React.FC<any> = () => {
   const [videoList, setVideoList] = useState(<></>);
@@ -28,10 +29,7 @@ const VideoList: React.FC<any> = () => {
             sizeMd="4"
             sizeLg="3"
           >
-            <IonCard
-              className="ion-no-margin"
-              style={{ boxShadow: "unset", borderRadius: 0 }}
-            >
+            <IonCard className="ion-no-margin">
               <IonRouterLink
                 routerLink={
                   "/playlist-items/" +
@@ -43,11 +41,11 @@ const VideoList: React.FC<any> = () => {
                 <IonGrid style={{ padding: 0 }}>
                   <IonRow>
                     <IonCol
+                      className="ioncol1"
                       size="12"
                       sizeSm="12"
                       sizeMd="12"
                       sizeLg="12"
-                      style={{ padding: "0 5px 0 0" }}
                     >
                       <img
                         src={
@@ -60,9 +58,7 @@ const VideoList: React.FC<any> = () => {
                       />
                     </IonCol>
                     <IonCol>
-                      <h4 className="feed-title" style={{ marginBottom: 0 }}>
-                        {videoItem.snippet.title}
-                      </h4>
+                      <h4 className="feed-title">{videoItem.snippet.title}</h4>
                       <ReactTimeAgo
                         date={videoItem.snippet.publishedAt}
                         locale="en-US"
@@ -85,7 +81,7 @@ const VideoList: React.FC<any> = () => {
 
   return (
     <>
-      <IonGrid style={{ paddingTop: "0rem", marginTop: "0rem" }}>
+      <IonGrid className="grid">
         <IonRow>{videoList}</IonRow>
       </IonGrid>
 
