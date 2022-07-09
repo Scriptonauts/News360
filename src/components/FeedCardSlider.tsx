@@ -10,6 +10,7 @@ import {
 import ReactTimeAgo from "react-time-ago";
 import Spinner from "./Spinner";
 import "./FeedCard.css";
+import { decode } from "html-entities";
 
 // Optional parameters to pass to the swiper instance.
 // See http://idangero.us/swiper/api/ for valid options.
@@ -58,7 +59,9 @@ class FeedCardSlider extends React.Component<any, any> {
                       <img src={feedItem.x_featured_media_medium} />
                     </IonCol>
                     <IonCol>
-                      <h4 className="feed-title">{feedItem.title.rendered}</h4>
+                      <h4 className="feed-title">
+                        {decode(feedItem.title.rendered, { level: "html5" })}
+                      </h4>
                       <ReactTimeAgo date={feedItem.date} locale="en-US" />
                     </IonCol>
                   </IonRow>

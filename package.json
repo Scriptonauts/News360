@@ -98,6 +98,7 @@
     "eslint-plugin-jsx-a11y": "^6.6.0",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "html-entities": "^2.3.3",
     "prettier": "2.7.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",

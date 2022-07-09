@@ -75,7 +75,7 @@ const VideoList: React.FC<any> = () => {
         setVideoList(html);
       })
       .catch((err) => {
-        console.log(err);
+        // Error handling
       });
   }, []);
 

@@ -37,7 +37,7 @@ class Home extends React.Component<any, any> {
         localStorage.setItem("category-ids", JSON.stringify(this.categories));
       })
       .catch((err) => {
-        console.log(err);
+        // Error handling
       });
   }
 
