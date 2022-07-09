@@ -1,12 +1,27 @@
 import { IonSearchbar } from "@ionic/react";
-import React, { useState } from "react";
-import './css-modules/Search.css';
+import { useEffect, useState } from "react";
+import "./css-modules/Search.css";
 
-const SearchForm: React.FC = (props: object) => {
-  const [searchText, setSearchText] = useState('');
+const SearchForm = (props: any) => {
+  const [searchText, setSearchText] = useState("");
+  const formHandler = (searchString: string) => {
+    props.searchHandler(searchString);
+  };
+
+  useEffect(() => {
+    formHandler(searchText);
+  }, [searchText]);
+
   return (
-    <IonSearchbar id="search-form" value={searchText} onIonChange={e => setSearchText(e.detail.value!)}></IonSearchbar>
-  )
-}
+    <div className="search-form">
+      <IonSearchbar
+        placeholder="Type to search..."
+        onIonChange={(e) => setSearchText(e.detail.value!)}
+        onIonClear={() => props.setSearchText("")}
+        id="search-bar"
+      />
+    </div>
+  );
+};
 
 export default SearchForm;

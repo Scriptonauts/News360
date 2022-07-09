@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.css';
-import { createStore, combineReducers } from 'redux';
-import allReducers from './reducers';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { Provider } from 'react-redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.css";
+import { createStore, combineReducers } from "redux";
+import allReducers from "./reducers";
+import { composeWithDevTools } from "redux-devtools-extension";
+import { Provider } from "react-redux";
 
 const reduxStore = createStore(allReducers, composeWithDevTools());
 
@@ -17,7 +17,7 @@ ReactDOM.render(
       <App />
     </React.StrictMode>
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

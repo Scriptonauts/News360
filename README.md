@@ -4,22 +4,20 @@
 
 > News360 is a free and open-source mobile app written in TypeScript, React, and then on the Ionic Framework for WordPress news blog owners. WordPress is the most popular CMS so we thought of creating an app for news blogs built on it. Features include a Home Screen, Feed Screen and Videos Screen.
 
-
 ## Built With
 
 - Ionic Framework
-- React 
+- React
 - Redux
 - Wordpress API
 - TypeScript
-
-
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+
 -`Nodejs`
 
 -`npm`
@@ -28,7 +26,8 @@ To get a local copy up and running follow these simple example steps.
 
 -`Ionic`
 
-### Clone this repository 
+### Clone this repository
+
 -`git clone https://github.com/Scriptonauts/News360.git`
 
 ### Install dependencies
@@ -41,21 +40,19 @@ To get a local copy up and running follow these simple example steps.
 
 -`ionic serve`
 
-
 ## Authors
 
 👤 **Kweku Bright**
 
 - GitHub: [@kwekubright](https://github.com/kwekubright)
-- Twitter: [@kwekubright_](https://twitter.com/kwekubright_)
+- Twitter: [@kwekubright\_](https://twitter.com/kwekubright_)
 - LinkedIn: [Kweku Bright](https://linkedin.com/in/kwekubright)
 
 👤 **Nii Darku**
 
 - GitHub: [@niicode](https://github.com/niicode)
-- Twitter: [@_niicode](https://twitter.com/_niicode)
+- Twitter: [@\_niicode](https://twitter.com/_niicode)
 - LinkedIn: [Nii Darku](https://linkedin.com/in//nii-darku-dodoo-082018148/)
-
 
 ## 🤝 Contributing
 
