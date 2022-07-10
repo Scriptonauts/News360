@@ -69,6 +69,7 @@ To get a local copy up and running follow these simple example steps.
 </tr>
 </tbody>
 </table>
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
