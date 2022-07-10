@@ -5,6 +5,7 @@ import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import AppHeader from "../components/AppHeader";
 import { decode } from "html-entities";
+import SocialSharing from "../components/SocialSharring";
 
 TimeAgo.addLocale(en);
 
@@ -39,6 +40,8 @@ class Article extends React.Component<any, any> {
                   Posted: {new Date(data.date).toUTCString()}
                 </p>
 
+                <SocialSharing data={data} position="start" />
+
                 {data.x_featured_media_large ? (
                   <img
                     src={data.x_featured_media_large}
@@ -54,6 +57,7 @@ class Article extends React.Component<any, any> {
                   content={decode(data.content.rendered, { level: "html5" })}
                   className="article-text"
                 />
+                <SocialSharing data={data} position="center" />
               </IonCol>
             </IonRow>
           </IonGrid>

@@ -39,6 +39,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0",
+    "react-share": "^4.4.0",
     "react-time-ago": "^7.1.9",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
