@@ -16,7 +16,7 @@ import SearchForm from "./SearchForm";
 const AppHeader = (props: any) => {
   return (
     <IonHeader className="ionheader-section">
-      <IonToolbar color="#33cc66">
+      <IonToolbar color="#33cc66" hidden={props.hideNav}>
         {props.backButton ? (
           <IonButtons slot="start">
             <IonBackButton defaultHref={"/home"} />
@@ -50,10 +50,12 @@ const AppHeader = (props: any) => {
 
 AppHeader.propTypes = {
   title: PropTypes.string.isRequired,
+  hideNav: PropTypes.bool,
 };
 AppHeader.defaultProps = {
   backButton: false,
   segment: "",
+  hideNav: false,
   categoryName: "",
   searchHandler: (e: any) => {
     return;

@@ -18,7 +18,7 @@ class Home extends React.Component<any, any> {
   categories: any = [];
   constructor(props: any) {
     super(props);
-    this.state = { catList: "" };
+    this.state = { catList: "", hideNav: false, hideTabBar: false };
   }
 
   componentDidMount() {
@@ -44,7 +44,7 @@ class Home extends React.Component<any, any> {
   render(): ReactNode {
     return (
       <IonPage>
-        <AppHeader title="Home" />
+        <AppHeader title="Home" hideNav={this.state.hideNav} />
         <IonContent fullscreen>
           <FeedSlider
             count="5"
@@ -59,7 +59,7 @@ class Home extends React.Component<any, any> {
           ></FeedCard>
 
           <FeedCardSlider
-            title="Op-ed"
+            title="Opinions"
             count="5"
             categories={process.env.REACT_APP_SLIDER_CATEGORY_ID}
           ></FeedCardSlider>
