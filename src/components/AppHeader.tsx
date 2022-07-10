@@ -24,7 +24,7 @@ const AppHeader = (props: any) => {
         ) : null}
 
         {props.title !== "Search" ? (
-          <IonTitle className="h2">
+          <IonTitle className="">
             {props.categoryName !== ""
               ? props.categoryName + " " + props.title
               : props.title}
