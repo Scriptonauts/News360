@@ -42,9 +42,9 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-<table>
+<table style="table-layout: fixed; width: 100%;">
 <tbody>
-<tr>
+<tr style="width:33.33%;">
 <td>
 👤 <b>Kweku Bright</b>
 
@@ -52,14 +52,14 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@kwekubright\_](https://twitter.com/kwekubright_)
 - LinkedIn: [Kweku Bright](https://linkedin.com/in/kwekubright)
 </td>
-<td>
+<td style="width:33.33%;">
 👤 <b>Nii Darku</b>
 
 - GitHub: [@niicode](https://github.com/niicode)
 - Twitter: [@\_niicode](https://twitter.com/_niicode)
 - LinkedIn: [Nii Darku](https://linkedin.com/in//nii-darku-dodoo-082018148/)
 </td>
-<td>
+<td style="width:33.33%;">
 👤 <b>Grace Muthui</b>
 
 - GitHub: [@Grayce Muthui](https://github.com/Graycemuthui)
