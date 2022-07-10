@@ -50,11 +50,11 @@ To get a local copy up and running follow these simple example steps.
 
 - GitHub: [@kwekubright](https://github.com/kwekubright)
 - Twitter: [@kwekubright\_](https://twitter.com/kwekubright_)
-- LinkedIn: [Kweku Bright](https://linkedin.com/in/kwekubright)|👤 **Nii Darku**
+- LinkedIn: [Kweku Bright](https://linkedin.com/in/kwekubright)| 👤 **Nii Darku**
 
 - GitHub: [@niicode](https://github.com/niicode)
 - Twitter: [@\_niicode](https://twitter.com/_niicode)
-- LinkedIn: [Nii Darku](https://linkedin.com/in//nii-darku-dodoo-082018148/)|👤 Grace Muthui
+- LinkedIn: [Nii Darku](https://linkedin.com/in//nii-darku-dodoo-082018148/)| 👤 Grace Muthui
 
 - GitHub: [@Grayce Muthui](https://github.com/Graycemuthui)
 - Twitter: [@Grayce_Muthui](https://twitter.com/Grayce_Muthui)
