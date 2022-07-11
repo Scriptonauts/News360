@@ -43,7 +43,7 @@ import Search from "./pages/Search";
 
 setupIonicReact();
 
-const App: React.FC = () => (
+const App: React.FC = (props: any) => (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
@@ -75,7 +75,7 @@ const App: React.FC = () => (
             </Route>
           </Switch>
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
+        <IonTabBar slot="bottom" hidden={props.hideTabBar}>
           <IonTabButton tab="home" href="/home">
             <IonIcon icon={home} />
             <IonLabel>Home</IonLabel>
@@ -93,5 +93,9 @@ const App: React.FC = () => (
     </IonReactRouter>
   </IonApp>
 );
+
+App.defaultProps = {
+  hideTabBar: false,
+};
 
 export default App;

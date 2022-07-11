@@ -5,7 +5,7 @@ import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import AppHeader from "../components/AppHeader";
 import { decode } from "html-entities";
-import SocialSharing from "../components/SocialSharring";
+import SocialSharing from "../components/SocialSharing";
 
 TimeAgo.addLocale(en);
 

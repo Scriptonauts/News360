@@ -13,7 +13,11 @@ TimeAgo.addLocale(en);
 
 class FeedCard extends React.Component<any, any> {
   addCategories: string | undefined;
-  static defaultProps: { searchText: string; pageName: string };
+  static defaultProps: {
+    searchText: string;
+    pageName: string;
+    catName: string;
+  };
 
   constructor(props: object) {
     super(props);
@@ -93,8 +97,17 @@ class FeedCard extends React.Component<any, any> {
                               level: "html5",
                             })}
                           </h4>
-                          <ReactTimeAgo date={feedItem.date} locale="en-US" /> |{" "}
-                          {feedItem.x_categories}
+                          <ReactTimeAgo date={feedItem.date} locale="en-US" />
+                          {this.props.catName !== ""
+                            ? null
+                            : " | " +
+                              feedItem.x_categories
+                                .split(",")
+                                .splice(0, 1)
+                                .join(", ")
+                                .replace(/^\w/, (chr: string) => {
+                                  return chr.toUpperCase();
+                                })}
                         </IonCol>
                       </IonRow>
                     </IonGrid>
@@ -148,6 +161,7 @@ class FeedCard extends React.Component<any, any> {
 FeedCard.defaultProps = {
   searchText: "",
   pageName: "",
+  catName: "",
 };
 
 export default FeedCard;

@@ -113,8 +113,7 @@ class FeedTab extends React.Component<any, any> {
                       <h4 className="feed-title" style={{ marginBottom: 0 }}>
                         {decode(feedItem.title.rendered, { level: "html5" })}
                       </h4>
-                      <ReactTimeAgo date={feedItem.date} locale="en-US" /> |{" "}
-                      {feedItem.x_categories}
+                      <ReactTimeAgo date={feedItem.date} locale="en-US" />
                     </IonCol>
                   </IonRow>
                 </IonGrid>
@@ -173,8 +172,7 @@ class FeedTab extends React.Component<any, any> {
                       <h4 className="feed-title" style={{ marginBottom: 0 }}>
                         {decode(feedItem.title.rendered, { level: "html5" })}
                       </h4>
-                      <ReactTimeAgo date={feedItem.date} locale="en-US" /> |{" "}
-                      {feedItem.x_categories}
+                      <ReactTimeAgo date={feedItem.date} locale="en-US" />
                     </IonCol>
                   </IonRow>
                 </IonGrid>

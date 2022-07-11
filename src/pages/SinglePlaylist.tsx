@@ -1,21 +1,8 @@
-import {
-  IonBackButton,
-  IonButtons,
-  IonCard,
-  IonCol,
-  IonContent,
-  IonGrid,
-  IonHeader,
-  IonPage,
-  IonRouterLink,
-  IonRow,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/react";
+import { IonContent, IonPage, IonRow } from "@ionic/react";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ReactTimeAgo from "react-time-ago";
 import AppHeader from "../components/AppHeader";
+import YouTube from "react-youtube";
 
 const SinglePlaylist: React.FC = () => {
   const [playList, setPlayList] = useState(<></>);
@@ -30,58 +17,28 @@ const SinglePlaylist: React.FC = () => {
     )
       .then((response) => response.json())
       .then((response) => {
-        const html = response.items.map((videoItem: any) => (
-          <IonCol
-            key={videoItem.id}
-            size="12"
-            sizeSm="12"
-            sizeMd="4"
-            sizeLg="3"
-          >
-            <IonCard
-              className="ion-no-margin"
-              style={{ boxShadow: "unset", borderRadius: 0 }}
-            >
-              <IonRouterLink routerLink="/playlist-items">
-                <IonGrid style={{ padding: 0 }}>
-                  <IonRow>
-                    <IonCol
-                      size="12"
-                      sizeSm="12"
-                      sizeMd="12"
-                      sizeLg="12"
-                      style={{ padding: "0 5px 0 0" }}
-                    >
-                      <div className="video-container">
-                        <iframe
-                          width="100%"
-                          height=""
-                          src={
-                            "https://www.youtube.com/embed/" +
-                            videoItem.snippet.resourceId.videoId
-                          }
-                          title="YouTube video player"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
-                      </div>
-                    </IonCol>
-                    <IonCol>
-                      <h4 className="feed-title" style={{ marginBottom: 0 }}>
-                        {videoItem.snippet.title}
-                      </h4>
-                      <ReactTimeAgo
-                        date={videoItem.snippet.publishedAt}
-                        locale="en-US"
-                      />{" "}
-                      | {videoItem.snippet.channelTitle}
-                    </IonCol>
-                  </IonRow>
-                </IonGrid>
-              </IonRouterLink>
-            </IonCard>
-          </IonCol>
+        const html = response.items.slice(0, 10).map((videoItem: any) => (
+          <>
+            <YouTube
+              videoId={videoItem.snippet.resourceId.videoId}
+              opts={{
+                width: window.screen.width,
+                height: "230px",
+                playerVars: {
+                  autoplay: 1,
+                  controls: 1,
+                  rel: 0,
+                  showinfo: 0,
+                  modestbranding: 1,
+                  iv_load_policy: 3,
+                  cc_load_policy: 0,
+                  disablekb: 1,
+                  fs: 0,
+                  fullscreen: 1,
+                },
+              }}
+            />
+          </>
         ));
 
         setPlayList(html);

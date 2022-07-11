@@ -8,6 +8,7 @@ import { createStore, combineReducers } from "redux";
 import allReducers from "./reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { Provider } from "react-redux";
+import ExploreContainer from "./components/ExploreContainer";
 
 const reduxStore = createStore(allReducers, composeWithDevTools());
 

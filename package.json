@@ -41,6 +41,7 @@
     "react-scripts": "^5.0.0",
     "react-share": "^4.4.0",
     "react-time-ago": "^7.1.9",
+    "react-youtube": "^9.0.3",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "swiper": "^8.0.7",
