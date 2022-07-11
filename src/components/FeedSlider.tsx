@@ -1,9 +1,9 @@
 import React from "react";
 import { IonSlides, IonSlide, IonRouterLink } from "@ionic/react";
 import Spinner from "./Spinner";
+import { decode } from "html-entities";
+import { url } from "inspector";
 
-// Optional parameters to pass to the swiper instance.
-// See http://idangero.us/swiper/api/ for valid options.
 const slideOpts = {
   initialSlide: 0,
   speed: 400,
@@ -17,6 +17,33 @@ class FeedSlider extends React.Component<any, any> {
     super(props);
     this.state = { slideList: <Spinner />, addCategories: "" };
   }
+
+  buildSlide = (feedItem: any) => {
+    let img = "";
+    feedItem.x_featured_media_medium != null
+      ? (img = "url(" + feedItem.x_featured_media_medium + ")")
+      : (img = "url(/images/default.png)");
+
+    const style = {
+      height: "250px",
+      backgroundImage: img,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundColor: "red",
+    };
+
+    return (
+      <IonSlide key={feedItem.id} style={style}>
+        <IonRouterLink routerLink={"/article?id=" + feedItem.id}>
+          <div className="bottom-left">
+            <h3 className="slider-title">
+              {decode(feedItem.title.rendered, { level: "html5" })}
+            </h3>
+          </div>
+        </IonRouterLink>
+      </IonSlide>
+    );
+  };
 
   componentDidMount() {
     if (this.props.categories) {
@@ -32,23 +59,7 @@ class FeedSlider extends React.Component<any, any> {
     )
       .then((response) => response.json())
       .then((response) => {
-        const html = response.map((feedItem: any) => (
-          <IonSlide key={feedItem.id}>
-            <IonRouterLink routerLink={"/article?id=" + feedItem.id}>
-              <img
-                src={
-                  feedItem.x_featured_media_large
-                    ? feedItem.x_featured_media_large
-                    : "/images/default.png"
-                }
-                alt={feedItem.title.rendered}
-              />
-              <div className="bottom-left">
-                <h3 className="slider-title">{feedItem.title.rendered}</h3>
-              </div>
-            </IonRouterLink>
-          </IonSlide>
-        ));
+        const html = response.map((feedItem: any) => this.buildSlide(feedItem));
 
         this.setState({ slideList: html });
 
@@ -61,7 +72,7 @@ class FeedSlider extends React.Component<any, any> {
         this.setState({ slide: slide_ });
       })
       .catch((err) => {
-        console.log(err);
+        // Error handling
       });
   }
 

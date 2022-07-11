@@ -3,6 +3,7 @@ import React from "react";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import ReactTimeAgo from "react-time-ago";
+import { decode } from "html-entities";
 import Spinner from "./Spinner";
 import "./FeedCard.css";
 
@@ -37,13 +38,10 @@ class FeedCard extends React.Component<any, any> {
           this.props.count + this.addCategories
         }`);
 
-    console.log(endpoint);
-
     if (!isEmptySearch) {
       fetch(endpoint, { mode: "cors" })
         .then((response) => response.json())
         .then((response) => {
-          console.log(response);
           if (response == "") {
             const html = (
               <>
@@ -91,7 +89,9 @@ class FeedCard extends React.Component<any, any> {
                             className="feed-title"
                             style={{ marginBottom: 0 }}
                           >
-                            {feedItem.title.rendered}
+                            {decode(feedItem.title.rendered, {
+                              level: "html5",
+                            })}
                           </h4>
                           <ReactTimeAgo date={feedItem.date} locale="en-US" /> |{" "}
                           {feedItem.x_categories}

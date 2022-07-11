@@ -4,6 +4,7 @@ import { Markup } from "interweave";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import AppHeader from "../components/AppHeader";
+import { decode } from "html-entities";
 
 TimeAgo.addLocale(en);
 
@@ -32,7 +33,7 @@ class Article extends React.Component<any, any> {
               <IonCol size="12">
                 <p className="article-cat-list">{data.x_categories}</p>
                 <h2 style={{ fontWeight: 600, marginBottom: 0 }}>
-                  {data.title.rendered}
+                  {decode(data.title.rendered, { level: "html5" })}
                 </h2>
                 <p style={{ marginBottom: "1rem" }}>
                   Posted: {new Date(data.date).toUTCString()}
@@ -50,7 +51,7 @@ class Article extends React.Component<any, any> {
               </IonCol>
               <IonCol>
                 <Markup
-                  content={data.content.rendered}
+                  content={decode(data.content.rendered, { level: "html5" })}
                   className="article-text"
                 />
               </IonCol>

@@ -44,17 +44,33 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Kweku Bright**
+<table>
+<tbody>
+<tr>
+<td>
+👤 <b>Kweku Bright</b>
 
 - GitHub: [@kwekubright](https://github.com/kwekubright)
 - Twitter: [@kwekubright\_](https://twitter.com/kwekubright_)
 - LinkedIn: [Kweku Bright](https://linkedin.com/in/kwekubright)
-
-👤 **Nii Darku**
+</td>
+<td>
+👤 <b>Nii Darku</b>
 
 - GitHub: [@niicode](https://github.com/niicode)
 - Twitter: [@\_niicode](https://twitter.com/_niicode)
 - LinkedIn: [Nii Darku](https://linkedin.com/in//nii-darku-dodoo-082018148/)
+</td>
+<td>
+👤 <b>Grace Muthui</b>
+
+- GitHub: [@Grayce Muthui](https://github.com/Graycemuthui)
+- Twitter: [@Grayce_Muthui](https://twitter.com/Grayce_Muthui)
+- LinkedIn: [@Grayce Muthui](http://www.linkedin.com/in/grayce-muthui-a17294226)
+</td>
+</tr>
+</tbody>
+</table>
 
 ## 🤝 Contributing
 

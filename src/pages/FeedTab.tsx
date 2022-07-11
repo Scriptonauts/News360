@@ -16,6 +16,7 @@ import FeedSegment from "../components/FeedSegment";
 import React from "react";
 import ReactTimeAgo from "react-time-ago";
 import AppHeader from "../components/AppHeader";
+import { decode } from "html-entities";
 
 class FeedTab extends React.Component<any, any> {
   queryParams: any;
@@ -110,7 +111,7 @@ class FeedTab extends React.Component<any, any> {
                     </IonCol>
                     <IonCol>
                       <h4 className="feed-title" style={{ marginBottom: 0 }}>
-                        {feedItem.title.rendered}
+                        {decode(feedItem.title.rendered, { level: "html5" })}
                       </h4>
                       <ReactTimeAgo date={feedItem.date} locale="en-US" /> |{" "}
                       {feedItem.x_categories}
@@ -170,7 +171,7 @@ class FeedTab extends React.Component<any, any> {
                     </IonCol>
                     <IonCol>
                       <h4 className="feed-title" style={{ marginBottom: 0 }}>
-                        {feedItem.title.rendered}
+                        {decode(feedItem.title.rendered, { level: "html5" })}
                       </h4>
                       <ReactTimeAgo date={feedItem.date} locale="en-US" /> |{" "}
                       {feedItem.x_categories}

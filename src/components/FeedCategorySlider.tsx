@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { IonSlides, IonSlide, IonCard } from "@ionic/react";
 import "./FeedCategoryMason.css";
+import { decode } from "html-entities";
 
 // Optional parameters to pass to the swiper instance.
 // See http://idangero.us/swiper/api/ for valid options.
@@ -29,7 +30,9 @@ const FeedCategorySlider = (props: any) => {
               routerLink={"/category/" + catItem.id + "/" + catItem.name}
             >
               <div className="cat-bottom-left ">
-                <h5>{catItem.name.toUpperCase()}</h5>
+                <h5>
+                  {decode(catItem.name.toUpperCase(), { level: "html5" })}
+                </h5>
               </div>
             </IonCard>
           </IonSlide>
