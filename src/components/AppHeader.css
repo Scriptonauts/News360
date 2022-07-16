@@ -13,8 +13,8 @@
   border: none !important;
 }
 
-.btn-check:focus + .btn,
-.btn:focus {
+.btn:focus,
+.btn-check:focus + .btn {
   outline: 0;
   box-shadow: none !important;
 }
