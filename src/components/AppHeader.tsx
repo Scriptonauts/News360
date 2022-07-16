@@ -9,11 +9,30 @@ import {
 } from "@ionic/react";
 import PropTypes from "prop-types";
 import "./AppHeader.css";
-import { ellipsisVerticalOutline } from "ionicons/icons";
+import { ellipsisVerticalOutline, bookmark } from "ionicons/icons";
 import HeaderPopover from "./HeaderPopover";
 import SearchForm from "./SearchForm";
 
 const AppHeader = (props: any) => {
+  const bookmarkHandler = () => {
+    // getting id of the article
+    const queryParams = new URLSearchParams(window.location.search);
+    const articleID = queryParams.get("id");
+    console.log(articleID);
+    // check if a bookmark item exists in the storage
+    let item = JSON.parse(localStorage.getItem("bookmarks")!);
+    if (item === null) {
+      item = [];
+    }
+    if (item.includes(articleID)) {
+      console.log("this article is already bookmarked");
+      return;
+    }
+
+    item.push(articleID);
+    localStorage.setItem("bookmarks", JSON.stringify(item));
+  };
+
   return (
     <IonHeader className="ionheader-section">
       <IonToolbar color="#33cc66" hidden={props.hideNav}>
@@ -31,9 +50,24 @@ const AppHeader = (props: any) => {
           </IonTitle>
         ) : null}
 
-        <IonButtons slot="primary" id="search">
-          <IonButton fill="solid" color="secondary">
-            <IonIcon icon={ellipsisVerticalOutline} slot="end" />
+        <IonButtons slot="primary">
+          {props.title === "Article" ? (
+            <IonButton
+              onClick={() => bookmarkHandler()}
+              fill="solid"
+              color="secondary"
+              className="btn"
+              size="small"
+            >
+              <IonIcon icon={bookmark} slot="end" className="m-0 p-0" />
+            </IonButton>
+          ) : null}
+          <IonButton fill="solid" color="secondary" id="search" className="btn">
+            <IonIcon
+              icon={ellipsisVerticalOutline}
+              slot="end"
+              className="m-0 p-0"
+            />
           </IonButton>
         </IonButtons>
 
