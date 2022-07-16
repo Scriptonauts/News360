@@ -6,3 +6,15 @@
 .iontoolbar {
   color: #3c6;
 }
+
+.btn {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
