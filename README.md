@@ -1,6 +1,8 @@
 ![](https://img.shields.io/badge/News360-v1.0.0-blueviolet.svg?style=flat-square)
 
 # News360
+![mockmain](https://user-images.githubusercontent.com/5249414/178165607-00e2fce9-413d-41da-b777-9524cb4e6323.png)
+
 
 > News360 is a free and open-source mobile app written in TypeScript, React, and then on the Ionic Framework for WordPress news blog owners. WordPress is the most popular CMS so we thought of creating an app for news blogs built on it. Features include a Home Screen, Feed Screen and Videos Screen.
 

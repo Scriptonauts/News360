@@ -2,7 +2,7 @@
 
 ---
 
-- Before jumping into a PR be sure to search [existing PRs](https://github.com/Scriptonauts/News360/issues) or [issues](https://github.com/Scriptonauts/News360/pulls) for an open or closed item that relates to your submission.
+- Before jumping into a PR be sure to search [existing PRs](https://github.com/Scriptonauts/News360/pulls) or [issues](https://github.com/Scriptonauts/News360/issues) for an open or closed item that relates to your submission.
 
 ## Developing
 
