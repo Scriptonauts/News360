@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "News360",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
