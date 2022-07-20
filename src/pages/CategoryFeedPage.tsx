@@ -27,26 +27,28 @@ const CategoryFeedPage: React.FC = () => {
 
   useEffect(() => {
     fetchArticles();
-  }, [])
+  }, []);
 
-  const fetchArticles = (page = 1) => 
-    wp.posts()
+  const fetchArticles = (page = 1) =>
+    wp
+      .posts()
       .perPage(10)
       .page(page)
       .categories(uriSegments.id)
       .get()
       .then((response: any) => {
         setArticles(articles.concat(response));
-        page === response._paging.totalPages ? setInfiniteDisabled(true) : setPage(page + 1);
+        page === response._paging.totalPages
+          ? setInfiniteDisabled(true)
+          : setPage(page + 1);
       })
       .catch((error: any) => {
         console.log(error);
       });
-  
 
-  const loadMore = async (): Promise<void> => { 
+  const loadMore = async (): Promise<void> => {
     fetchArticles(page);
-  }
+  };
 
   return (
     <IonPage>
@@ -58,11 +60,9 @@ const CategoryFeedPage: React.FC = () => {
       />
       <IonContent fullscreen>
         <IonRow>
-          {
-            articles.map((article: any) => {
-              return <FeedCardComp key={article.id} article={article} />
-            })
-          }
+          {articles.map((article: any) => {
+            return <FeedCardComp key={article.id} article={article} />;
+          })}
         </IonRow>
 
         <IonInfiniteScroll

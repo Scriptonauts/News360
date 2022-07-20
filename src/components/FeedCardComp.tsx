@@ -6,13 +6,7 @@ import PropTypes from "prop-types";
 const FeedCardComp = (props: any) => {
   const article = props.article;
   return (
-    <IonCol
-      key={article.id}
-      size="12"
-      sizeSm="12"
-      sizeMd="4"
-      sizeLg="3"
-    >
+    <IonCol key={article.id} size="12" sizeSm="12" sizeMd="4" sizeLg="3">
       <IonCard
         className="ion-no-margin"
         style={{ boxShadow: "unset", borderRadius: 0 }}
@@ -36,10 +30,7 @@ const FeedCardComp = (props: any) => {
                 />
               </IonCol>
               <IonCol>
-                <h4
-                  className="feed-title"
-                  style={{ marginBottom: 0 }}
-                >
+                <h4 className="feed-title" style={{ marginBottom: 0 }}>
                   {decode(article.title.rendered, {
                     level: "html5",
                   })}
@@ -58,11 +49,11 @@ const FeedCardComp = (props: any) => {
         </IonRouterLink>
       </IonCard>
     </IonCol>
-)
-}
+  );
+};
 
 FeedCardComp.propTypes = {
   article: PropTypes.object.isRequired,
-}
+};
 
 export default FeedCardComp;
