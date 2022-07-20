@@ -40,6 +40,7 @@ import CategoryFeed from "./pages/CategoryFeed";
 import VideoTab from "./pages/VideoTab";
 import SinglePlaylist from "./pages/SinglePlaylist";
 import Search from "./pages/Search";
+import CategoryFeedPage from "./pages/CategoryFeedPage";
 
 setupIonicReact();
 
@@ -56,7 +57,7 @@ const App: React.FC = (props: any) => (
               <Search />
             </Route>
             <Route path="/category/:id/:name">
-              <CategoryFeed />
+              <CategoryFeedPage />
             </Route>
             <Route exact path="/article">
               <Article />

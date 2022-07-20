@@ -4,7 +4,6 @@ import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
-import { Provider } from "react-redux";
 
 ReactDOM.render(
     <React.StrictMode>
