@@ -4,20 +4,11 @@ import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
-import { createStore, combineReducers } from "redux";
-import allReducers from "./reducers";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { Provider } from "react-redux";
-import ExploreContainer from "./components/ExploreContainer";
-
-const reduxStore = createStore(allReducers, composeWithDevTools());
 
 ReactDOM.render(
-  <Provider store={reduxStore}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById("root")
 );
 
